@@ -30,3 +30,14 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+#date time expects an integer
+#.calendar(firstweekday=0)
+
+#note: chceck argv
+#if there are no arguments then do step 1
+# step 1: calendar printed out with todays date. with datetime.date().
+#   - if no input, default to todays date. print method datetime.now().month and another with year.
+#   - elif input, 
+
+print (calendar.month(2019, 3, 2, 1))
