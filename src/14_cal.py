@@ -34,10 +34,28 @@ from datetime import datetime
 #date time expects an integer
 #.calendar(firstweekday=0)
 
-#note: chceck argv
-#if there are no arguments then do step 1
+
+
+
 # step 1: calendar printed out with todays date. with datetime.date().
 #   - if no input, default to todays date. print method datetime.now().month and another with year.
-#   - elif input, 
+#   - elif one input,
+#         - its going to be the month and were going to use the current year.
+#   - elif twi inputs, 
+#         -the first will be the month, 2nd will be the year, will use those for the calendar
+#   -else more than 1 inputs, 
+#         -send error message  
 
-print (calendar.month(2019, 3, 2, 1))
+year, month = datetime.today().year, datetime.today().month
+
+
+if len(sys.argv) == 1:
+    print(calendar.month(year, month))
+elif len(sys.argv) == 2:
+    year, month = year, int(sys.argv[1])
+    print(calendar.month(year, month))
+elif len(sys.argv) == 3:
+    year, month = int(sys.argv[2]), int(sys.argv[1])
+    print(calendar.month(year, month))
+else:
+    print("Please use the format [month] [year]")
